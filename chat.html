@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>tbh – Messages | Anonymous Vibes</title>
+    <title>tbh – Anonymous Vibes | Chat</title>
 </head>
-<body class="dark-theme has-sidebar">
+
+<body class="dark-theme has-sidebar"> 
 
     <header class="mobile-header">
         <div class="logo">
             <h2>tbh</h2>
-            <span class="tagline">Messages</span>
+            <span class="tagline">Anonymous Vibes</span>
         </div>
         <div class="right-icons">
-            <i class="fa-solid fa-sliders icon" id="mobile-filter"></i>
+            <i class="fa-regular fa-bell icon"></i>
         </div>
     </header>
 
@@ -24,103 +26,189 @@
             <h2>tbh</h2>
             <span class="tagline">Anonymous Vibes</span>
         </div>
+
         <div class="menu-list">
             <ul>
                 <li><a href="index.html"><i class="fa-solid fa-house"></i> &nbsp;Home</a></li>
                 <li class="active"><a href="chat.html"><i class="fa-regular fa-message"></i> &nbsp;Chat</a></li>
-                <li><a href="gistme.html"><i class="fas fa-mask"></i>&nbsp;Post</a></li>
+                <li> <a href="gistme.html"><i class="fas fa-mask"></i>&nbsp;Post</a></li>
                 <li><a href="#"><i class="fa-solid fa-circle-question"></i>&nbsp;Help</a></li>
             </ul>
         </div>
+
         <div class="user-area">
-            <button id="theme-toggle"><i class="fa-solid fa-brush"></i></button>
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fa-solid fa-brush"></i>
+            </button>
+            <div class="user-icon">
+            </div>
         </div>
     </nav>
 
-    <main class="chat-interface">
-        <aside class="chat-sidebar">
-            <div class="sidebar-top">
-                <h2>Chats</h2>
-                <button class="icon-btn-circle" id="open-chat-modal-sidebar">
-                    <i class="fa-solid fa-plus"></i>
+    <main>
+        
+        <section class="aside-menu">
+            <div class="aside-header">Your Anonymous Chats</div>
+
+            <div class="new-chat-row desktop-only" style="margin-bottom: 20px;">
+                <button id="open-chat-modal-sidebar" class="new-chat-btn" aria-label="Start new chat">
+                    <span class="new-chat-label">New Chat</span>
+                    <span class="new-chat-icon" aria-hidden="true">
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </span>
                 </button>
             </div>
             
-            <div class="search-bar">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholder="Search secrets...">
-            </div>
-
-            <ul class="conversation-list">
-                <li class="conv-item active">
-                    <div class="avatar-wrapper">
-                        <div class="anon-avatar gradient-1">JD</div>
-                        <span class="status-indicator online"></span>
-                    </div>
-                    <div class="conv-details">
-                        <div class="conv-header">
-                            <span class="username">Secret Admirer</span>
-                            <span class="time">12:45 PM</span>
-                        </div>
-                        <div class="conv-preview">
-                            <p>Did you see the new post on the feed?</p>
-                            <span class="unread-count">3</span>
-                        </div>
+            <ul class="user-chats">
+                <li onclick="window.location.href='chat.html';">
+                    <div class="anon-avatar">A1</div>
+                    <div>
+                        <div style="font-weight: 600;">Anonymous Sender</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">"You're awesome, tbh."</div>
                     </div>
                 </li>
-                </ul>
-        </aside>
-
-        <section class="active-chat-window">
-            <div class="chat-window-header">
-                <div class="user-info">
-                    <div class="anon-avatar gradient-1 small">JD</div>
-                    <div>
-                        <h3>Secret Admirer</h3>
-                        <span class="status-text">Typing...</span>
+                <li onclick="window.location.href='chat.html';" class="active-chat-item" > 
+                    <div class="anon-avatar">B2</div>
+                    <div style="flex: 1;">
+                        <div style="font-weight: 600; display: flex; justify-content: space-between;">
+                            <span>Secret Admirer</span>
+                            <span style="font-size: 0.7rem; color: var(--primary);">3</span>
+                        </div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">New prompt received!</div>
                     </div>
-                </div>
-                <div class="header-actions">
-                    <i class="fa-solid fa-phone"></i>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                </div>
-            </div>
+                </li>
+                <li onclick="window.location.href='chat.html';">
+                    <div class="anon-avatar">C3</div>
+                    <div>
+                        <div style="font-weight: 600;">Mystery User</div>
+                        <div style="font-size: 0.8rem; opacity: 0.8;">Last seen 5m ago</div>
+                    </div>
+                </li>
+            </ul>
 
-            <div class="chat-messages-container" id="chat-flow">
-                <div class="message-bubble received">
-                    <p>Hey! I saw your gist earlier. So relatable.</p>
-                    <span class="msg-time">12:40 PM</span>
-                </div>
-                <div class="message-bubble sent">
-                    <p>Haha, thanks! I wasn't sure if I should post it.</p>
-                    <span class="msg-time">12:42 PM</span>
-                </div>
-                <div class="message-bubble received">
-                    <p>Glad you did. It made my day tbh.</p>
-                    <span class="msg-time">12:43 PM</span>
-                </div>
-            </div>
-
-            <div class="chat-input-wrapper">
-                <button class="attach-btn"><i class="fa-solid fa-paperclip"></i></button>
-                <div class="input-field-container">
-                    <input type="text" placeholder="Send an anonymous message..." id="message-input">
-                    <button class="emoji-btn"><i class="fa-regular fa-face-smile"></i></button>
-                </div>
-                <button class="send-btn" id="send-msg-btn">
-                    <i class="fa-solid fa-paper-plane"></i>
-                </button>
-            </div>
         </section>
+
+        <section class="chat-view">
+            
+            <div class="new-chat-row mobile-only-prompt">
+                <button id="open-chat-modal-main" class="new-chat-btn" aria-label="Start new chat">
+                    <span class="new-chat-label">New Anonymous Chat</span>
+                    <span class="new-chat-icon" aria-hidden="true">
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </span>
+                </button>
+                <p style="color: var(--text-color-dark); margin-top: 20px;">
+                    Start a new conversation with a secret prompt.
+                </p>
+            </div>
+            
+            </section>
     </main>
 
     <nav class="bottom-nav">
         <a class="tab" href="index.html"><i class="fas fa-home"></i></a>
         <a class="tab active" href="chat.html"><i class="fas fa-comment-dots"></i></a>
         <a class="tab" href="gistme.html"><i class="fas fa-mask"></i></a>
+        <a class="tab" href="#"><i class="fas fa-circle-question"></i></a>
         <div class="tab" id="mobile-theme-toggle"><i class="fas fa-brush"></i></div>
     </nav>
 
+    
+    <div id="chat-modal-overlay" class="chat-modal-overlay">
+        <div class="chat-modal">
+            
+            <button class="close-btn" aria-label="Close chat selection">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <h2>Who do you want to vibe with?</h2>
+            
+            <div class="chat-options-container">
+                
+                <div class="chat-option-card one-on-one">
+                    <i class="fas fa-user-circle"></i>
+                    <h3>Private</h3>
+                </div>
+                
+                <div class="chat-option-card community">
+                    <i class="fas fa-users-line"></i>
+                    <h3>Community</h3>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div id="themeModalOverlay" class="theme-modal-overlay">
+        <div class="theme-modal">
+            
+            <button class="close-theme-btn" aria-label="Close theme selection">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <h2>Choose theme</h2>
+            
+            <div class="theme-options-container">
+
+                <div class="theme">
+                    <div id="theme-option-dark">                       
+                        <h3><i class="fas fa-moon"></i>&nbsp; Dark Mode</h3>
+                    </div>
+                    
+                    <div id="theme-option-light">
+                        <h3><i class="fas fa-sun"></i>&nbsp; Light Mode</h3>
+                    </div>
+                </div><hr>
+
+                <div class="theme-option" id="theme-option-pink">
+                    <div class="pink" id="theme-option-pink"></div>
+                    <h3>Pink Theme</h3>
+                </div>        
+                
+                <div class="theme-option" id="theme-option-red">
+                    <div class="red" id="theme-option-red"></div>
+                    <h3>Red Theme</h3>
+                </div>
+                
+                <div class="theme-option" id="theme-option-blue">
+                    <div class="blue"></div>
+                    <h3>Blue theme</h3>
+                </div>    
+                
+                <div class="theme-option" id="theme-option-purple">
+                    <div class="purple"></div>
+                    <h3>Purple Theme</h3>
+                </div>
+                
+                <div class="theme-option" id="theme-option-green">
+                    <div class="green"></div>
+                    <h3>Green theme</h3>
+                </div> 
+                      
+                <div class="theme-option" id="theme-option-yellow">
+                    <div class="yellow"></div>
+                    <h3>Yellow Theme</h3>
+                </div>
+                
+                <div class="theme-option" id="theme-option-brown">
+                    <div class="brown"></div>
+                    <h3>Brown theme</h3>
+                </div>
+                
+                <div class="theme-option" id="theme-option-orange">
+                    <div class="orange"></div>
+                    <h3>Orange theme</h3>
+                </div>                  
+            </div>
+
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/3671b2dd15.js" crossorigin="anonymous"></script>
 </body>
+
+
 </html>
+
