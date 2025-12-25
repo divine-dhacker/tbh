@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>tbh – Messages | Anonymous Vibes</title>
+</head>
+<body class="dark-theme has-sidebar">
+
+    <header class="mobile-header">
+        <div class="logo">
+            <h2>tbh</h2>
+            <span class="tagline">Messages</span>
+        </div>
+        <div class="right-icons">
+            <i class="fa-solid fa-sliders icon" id="mobile-filter"></i>
+        </div>
+    </header>
+
+    <nav class="top-nav">
+        <div class="logo">
+            <h2>tbh</h2>
+            <span class="tagline">Anonymous Vibes</span>
+        </div>
+        <div class="menu-list">
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> &nbsp;Home</a></li>
+                <li class="active"><a href="chat.html"><i class="fa-regular fa-message"></i> &nbsp;Chat</a></li>
+                <li><a href="gistme.html"><i class="fas fa-mask"></i>&nbsp;Post</a></li>
+                <li><a href="#"><i class="fa-solid fa-circle-question"></i>&nbsp;Help</a></li>
+            </ul>
+        </div>
+        <div class="user-area">
+            <button id="theme-toggle"><i class="fa-solid fa-brush"></i></button>
+        </div>
+    </nav>
+
+    <main class="chat-interface">
+        <aside class="chat-sidebar">
+            <div class="sidebar-top">
+                <h2>Chats</h2>
+                <button class="icon-btn-circle" id="open-chat-modal-sidebar">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+            
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search secrets...">
+            </div>
+
+            <ul class="conversation-list">
+                <li class="conv-item active">
+                    <div class="avatar-wrapper">
+                        <div class="anon-avatar gradient-1">JD</div>
+                        <span class="status-indicator online"></span>
+                    </div>
+                    <div class="conv-details">
+                        <div class="conv-header">
+                            <span class="username">Secret Admirer</span>
+                            <span class="time">12:45 PM</span>
+                        </div>
+                        <div class="conv-preview">
+                            <p>Did you see the new post on the feed?</p>
+                            <span class="unread-count">3</span>
+                        </div>
+                    </div>
+                </li>
+                </ul>
+        </aside>
+
+        <section class="active-chat-window">
+            <div class="chat-window-header">
+                <div class="user-info">
+                    <div class="anon-avatar gradient-1 small">JD</div>
+                    <div>
+                        <h3>Secret Admirer</h3>
+                        <span class="status-text">Typing...</span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <i class="fa-solid fa-phone"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
+
+            <div class="chat-messages-container" id="chat-flow">
+                <div class="message-bubble received">
+                    <p>Hey! I saw your gist earlier. So relatable.</p>
+                    <span class="msg-time">12:40 PM</span>
+                </div>
+                <div class="message-bubble sent">
+                    <p>Haha, thanks! I wasn't sure if I should post it.</p>
+                    <span class="msg-time">12:42 PM</span>
+                </div>
+                <div class="message-bubble received">
+                    <p>Glad you did. It made my day tbh.</p>
+                    <span class="msg-time">12:43 PM</span>
+                </div>
+            </div>
+
+            <div class="chat-input-wrapper">
+                <button class="attach-btn"><i class="fa-solid fa-paperclip"></i></button>
+                <div class="input-field-container">
+                    <input type="text" placeholder="Send an anonymous message..." id="message-input">
+                    <button class="emoji-btn"><i class="fa-regular fa-face-smile"></i></button>
+                </div>
+                <button class="send-btn" id="send-msg-btn">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <nav class="bottom-nav">
+        <a class="tab" href="index.html"><i class="fas fa-home"></i></a>
+        <a class="tab active" href="chat.html"><i class="fas fa-comment-dots"></i></a>
+        <a class="tab" href="gistme.html"><i class="fas fa-mask"></i></a>
+        <div class="tab" id="mobile-theme-toggle"><i class="fas fa-brush"></i></div>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
